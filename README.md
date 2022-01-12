@@ -1,0 +1,1 @@
+# selfcare-ms-spring-archetype
