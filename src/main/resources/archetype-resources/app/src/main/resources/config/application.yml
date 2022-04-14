@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 ${symbol_pound}TODO change name
 server:
-  port: ${symbol_dollar}{MS_PRODUCT_SERVER_PORT:8080}
+  port: ${symbol_dollar}{APP_SERVER_PORT:8080}
 
 spring:
   application:
@@ -24,4 +24,4 @@ info:
 
 logging:
   level:
-    ${package}: ${symbol_dollar}{MS_PRODUCT_LOG_LEVEL:DEBUG}
+    ${package}: ${symbol_dollar}{APP_LOG_LEVEL:DEBUG}
