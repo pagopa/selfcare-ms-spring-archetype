@@ -14,6 +14,12 @@ spring:
     include:
       # TO enable specific-language documentations
       - swaggerEN
+  zipkin:
+    enabled: false
+  sleuth:
+    baggage:
+      remote-fields: X-Client-Ip
+      correlation-fields: X-Client-Ip
 
 info:
   build:
@@ -26,3 +32,5 @@ info:
 logging:
   level:
     ${package}: ${symbol_dollar}{APP_LOG_LEVEL:DEBUG}
+  pattern:
+    additional-info: ",%X{X-Client-Ip:-}]"
