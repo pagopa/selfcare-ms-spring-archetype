@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @EnableWebMvc
 @ComponentScan(basePackages = "${package}.web.controller")
 @TestPropertySource(locations = "classpath:config/application.yml")
-@Sl4j
+@Slf4j
 class SwaggerConfigTest {
 
     @MockBean
