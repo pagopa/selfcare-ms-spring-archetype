@@ -6,6 +6,7 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ${package}.core.NameService;
 import org.junit.jupiter.api.Test;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
