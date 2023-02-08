@@ -1,7 +1,7 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-package ${package}.web.config;
+#set($symbol_pound='#')
+        #set($symbol_dollar='$')
+        #set($symbol_escape='\' )
+        package ${package}.web.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ${package}.core.NameService;
@@ -37,6 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @EnableWebMvc
 @ComponentScan(basePackages = "${package}.web.controller")
 @TestPropertySource(locations = "classpath:config/application.yml")
+@Sl4j
 class SwaggerConfigTest {
 
     @MockBean
@@ -51,7 +52,8 @@ class SwaggerConfigTest {
     @Test
     void swaggerSpringPlugin() throws Exception {
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-        mockMvc.perform(MockMvcRequestBuilders.get("/v3/api-docs").accept(MediaType.APPLICATION_JSON)).andExpect(MockMvcResultMatchers.status().is2xxSuccessful()).andDo((result) -> {
+        mockMvc.perform(MockMvcRequestBuilders.get("/v3/api-docs").accept(MediaType.APPLICATION_JSON))
+        .andExpect(MockMvcResultMatchers.status().is2xxSuccessful()).andDo((result) -> {
             assertNotNull(result);
             assertNotNull(result.getResponse());
             final String content = result.getResponse().getContentAsString();
