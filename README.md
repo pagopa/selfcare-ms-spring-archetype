@@ -1,4 +1,4 @@
-# selfcare-ms-spring-archetype
+# selfcare-ms-spring-archetype 
 The goal of this project is to provide a template for generating new Spring Boot-based microservices.
 
 ### Testing
